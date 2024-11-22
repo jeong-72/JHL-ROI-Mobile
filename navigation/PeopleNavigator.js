@@ -2,27 +2,27 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 // Import Screens
-
-import PeopleViewScreen from "../screens/PeopleViewScreen";
-import PersonEditScreen from "../screens/PersonEditScreen";
+import PeopleViewScreen from '../screens/PeopleViewScreen';
+import PersonEditScreen from '../screens/PersonEditScreen';
+import PersonViewScreen from '../screens/PersonViewScreen';
 
 
 const Stack = createStackNavigator();
 
 export default function PeopleNavigator() {
   return (
-    <Stack.Navigator initialRouteName='PeopleView' screenOptions={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName='PeopleView'>
       <Stack.Screen
         name='PeopleView'
-        component={StackScreen1}
-      />
-      <Stack.Screen
-        name='StackScreen1'
-        component={StackScreen1}
+        component={PeopleViewScreen}
       />
       <Stack.Screen
         name='PersonView'
-        component={StackScreen1}
+        component={PersonViewScreen}
+      />
+      <Stack.Screen
+        name='PersonEdit'
+        component={PersonEditScreen}
       />
     </Stack.Navigator>
   );
