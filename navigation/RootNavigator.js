@@ -10,15 +10,14 @@ const Stack = createStackNavigator();
 
 export default function RootNavigator() {
   return (
-    <Stack.Navigator initialRouteName='Main' screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      initialRouteName='Main'
+      screenOptions={{ headerShown: false }}
+    >
       <Stack.Screen
-        name='Main'
-        component={MainNavigator}
-      />
+        name='Main' component={MainNavigator}/>
       <Stack.Screen
-        name='NotFound'
-        component={NotFoundScreen}
-      />
+        name='NotFound' component={NotFoundScreen}/>
     </Stack.Navigator>
   );
 }
