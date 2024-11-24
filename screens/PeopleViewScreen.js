@@ -6,9 +6,36 @@ import { useIsFocused } from "@react-navigation/native";
 import { Dropdown } from "react-native-paper-dropdown";
 
 export default function PeopleViewScreen(props) {
+
+function showAddPerson() {
+  props.navigation.navigate("EditPerson", { id: -1 });
+}
+
+function showEditPerson(id) {
+  props.navigation.navigate("EditPerson", { id: id });
+}
+
+function showViewPerson(id) {
+  props.navigation.navigate("ViewPerson", { id: id });
+}
+
   return (
-    <Surface style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text  variant='displaySmall'>PeopleViewScreen</Text>
+    <Surface
+      style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+    >
+      <Text variant="displaySmall">PeopleViewScreen</Text>
+      <Button mode="contained" icon="update" onPress={() => showViewPerson()}>
+        View Person
+      </Button>
+      <Button mode="contained" icon="update" onPress={() => showEditPerson()}>
+        Edit Person
+      </Button>
+      <Button mode="contained" icon="update" onPress={() => showEditPerson()}>
+        Add Person
+      </Button>
+      <Button mode="contained" icon="update" onPress={() => showEditPerson()}>
+        Delete Person
+      </Button>
     </Surface>
-  )
+  );
 }

@@ -11,18 +11,24 @@ const Stack = createStackNavigator();
 
 export default function PeopleNavigator() {
   return (
-    <Stack.Navigator initialRouteName='PeopleView'>
+    <Stack.Navigator
+      initialRouteName="PeopleView"
+      screenOptions={{ headerShown: false }}
+    >
       <Stack.Screen
-        name='PeopleView'
+        name="PeopleView"
         component={PeopleViewScreen}
+        options={{ title: "View People" }}
       />
       <Stack.Screen
-        name='PersonView'
+        name="PersonView"
         component={PersonViewScreen}
+        options={{ title: "View Person" }}
       />
       <Stack.Screen
-        name='PersonEdit'
+        name="PersonEdit"
         component={PersonEditScreen}
+        options={{ title: "Edit Person" }}
       />
     </Stack.Navigator>
   );

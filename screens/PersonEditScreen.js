@@ -6,6 +6,10 @@ import { useIsFocused } from "@react-navigation/native";
 import { Dropdown } from "react-native-paper-dropdown";
 
 export default function PersonEditScreen(props) {
+
+function showPeopleView() {
+  props.navigation.navigate("PeopleView");
+}
   return (
     <Surface style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
       <Text  variant='displaySmall'>PersonEditScreen</Text>
