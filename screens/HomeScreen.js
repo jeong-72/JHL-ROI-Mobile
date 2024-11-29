@@ -6,9 +6,20 @@ import { useIsFocused } from "@react-navigation/native";
 import { Dropdown } from "react-native-paper-dropdown";
 
 export default function HomeScreen(props) {
+    const theme = useTheme();
   return (
-    <Surface style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text  variant='displaySmall'>HomeScreen</Text>
+    <Surface style={{ flex: 1, padding: 16 }} mode="flat" elevation={1}>
+      <Text
+        variant="headlineLarge"
+        style={{
+          marginHorizontal: 10,
+          marginBottom: 24,
+          fontWeight: "bold",
+          color: theme.colors.primary,
+        }}
+      >
+        Employee List
+      </Text>
     </Surface>
-  )
+  );
 }
