@@ -20,13 +20,23 @@ import { useIsFocused } from "@react-navigation/native";
 import { Dropdown } from "react-native-paper-dropdown";
 
 export default function HomeScreen(props) {
-    const theme = useTheme();
+  const theme = useTheme();
+  const imageIndex = {
+    logo: require("../assets/images/roi-logo.jpg"),
+    mono: require("../assets/images/roi-logo-monochrome.jpg"),
+  };
   return (
     <Surface style={{ flex: 1, padding: 16 }} mode="flat" elevation={1}>
+      <IconButton
+        icon="account-circle-outline"
+        mode="contained"
+        iconColor={theme.colors.onSecondary}
+        size={24}
+      />
       <Text
         variant="headlineLarge"
         style={{
-          marginHorizontal: 10,
+          paddingTop: 20,
           marginBottom: 24,
           fontWeight: "bold",
           color: theme.colors.primary,
@@ -34,39 +44,33 @@ export default function HomeScreen(props) {
       >
         Hi, John
       </Text>
-      {/* <ScrollView style={styles.scrollView}>
-        <View style={styles.squareBox}>
-          <Text style={styles.text}>ROI</Text>
-        </View>
-      </ScrollView> */}
-      <View>
-        <Text
-          variant="headlineLarge"
-          style={{
-            paddingTop: 40,
-            paddingVertical: 10,
-            fontFamily: "Trebuchet MS",
-            fontWeight: "bold",
-          }}
-        >
-          ROI HR System
-        </Text>
-        <Text style={{ fontFamily: "Trebuchet MS" }}>
-          Remaining Leave Days:
-        </Text>
+      <Divider />
+      <Image
+        source={imageIndex.logo}
+        resizeMode="contain"
+        style={{ width: "300", height: 150, margin: 20 }}
+      />
+
+      <Text
+        variant="headlineLarge"
+        style={{
+          textAlign: "left",
+          paddingVertical: 20,
+          fontWeight: "bold",
+        }}
+      >
+        ROI HR System
+      </Text>
+      <View
+        style={{
+          flexDirection: "row",
+          fontFamily: "Trebuchet MS",
+          paddingVertical: 20,
+        }}
+      >
+        Remaining Leave Days:10
       </View>
+      <Divider />
     </Surface>
   );
 }
-
-// const styles = StyleSheet.create({
-//   scrollView: {
-//     flex:1, padding: 20,
-//   },
-//   squareBox: {
-//     width: 300, height: 300, backgoundColor: #941a1d,
-//   },
-//     text: {
-//     fontSize: 100,
-//   }
-// })
