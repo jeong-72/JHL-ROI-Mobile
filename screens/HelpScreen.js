@@ -35,7 +35,9 @@ export default function HelpScreen(props) {
         1. Staff Directory
       </Text>
       <Text
+        variant="bodyMedium"
         style={{
+          color: "#2C3E50",
           paddingLeft: 14,
           paddingRight: 14,
           marginBottom: 24,
@@ -58,7 +60,9 @@ export default function HelpScreen(props) {
         2. Add New Staff
       </Text>
       <Text
+        variant="bodyMedium"
         style={{
+          color: "#2C3E50",
           paddingLeft: 14,
           paddingRight: 14,
           marginBottom: 24,
@@ -81,7 +85,9 @@ export default function HelpScreen(props) {
         3.Update Staff Information
       </Text>
       <Text
+        variant="bodyMedium"
         style={{
+          color: "#2C3E50",
           paddingLeft: 14,
           paddingRight: 14,
           marginBottom: 24,
@@ -97,13 +103,15 @@ export default function HelpScreen(props) {
         style={{
           marginBottom: 20,
           paddingLeft: 13,
-          fontWeight: "condensed"
+          fontWeight: "condensed",
         }}
       >
         4. Delete Staff Entry
       </Text>
       <Text
+        variant="bodyMedium"
         style={{
+          color: "#2C3E50",
           paddingLeft: 14,
           paddingRight: 14,
           marginBottom: 24,

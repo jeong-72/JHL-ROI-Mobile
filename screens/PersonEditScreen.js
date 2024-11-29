@@ -14,10 +14,7 @@ import {
 export default function PersonEditScreen(props) {
   theme = useTheme();
   const { id } = props.route.params;
-  const [person, setPerson] = useState({
-    name: "",
-
-  });
+  const [person, setPerson] = useState([]);
   const [offline, setOffline] = useState(false);
   const [error, setError] = useState([null]);
   const [departments, setDepartments] = useState([]);
@@ -49,7 +46,7 @@ export default function PersonEditScreen(props) {
   }, []);
 
   function showPersonView() {
-    props.navigation.navigate("ViewPerson");
+    props.navigation.navigate("PeopleView");
   }
 
   async function handleSubmit() {
@@ -67,28 +64,7 @@ export default function PersonEditScreen(props) {
     }
   }
 
-  async function handleSubmitTest() {
-    try {
-      if (id === -1) {
-        await addPerson({
-          name: "New Banana",
-          price: 3.3,
-          stock: 999,
-          description: "Fresh yellow banana",
-          categoryId: 1,
-        });
-      } else {
-        await updatePerson(id, {
-          ...person,
-          name: person.name + " Updated",
-        });
-      }
-      props.navigation.goBack();
-    } catch (err) {
-      console.error(err);
-      setError("Failed to save data.");
-    }
-  }
+
   return (
     <Surface style={{ flex: 1, padding: 16 }}>
       <Text
@@ -132,16 +108,8 @@ export default function PersonEditScreen(props) {
             style={{ marginBottom: 16 }}
           />
           <TextInput
-            label="DepartmentID"
-            value={person.stock}
-            onChangeText={(text) => setPerson({ ...person, department: text })}
-            mode="outlined"
-            keyboardType="numeric"
-            style={{ marginBottom: 16 }}
-          />
-          <TextInput
             label="Street"
-            value={person.description}
+            value={person.street}
             onChangeText={(text) => setPerson({ ...person, street: text })}
             mode="outlined"
             keyboardType="numeric"
@@ -149,23 +117,15 @@ export default function PersonEditScreen(props) {
           />
           <TextInput
             label="City"
-            value={person.stock}
+            value={person.city}
             onChangeText={(text) => setPerson({ ...person, city: text })}
             mode="outlined"
             keyboardType="numeric"
             style={{ marginBottom: 16 }}
           />
           <TextInput
-            label="State"
-            value={person.stock}
-            onChangeText={(text) => setPerson({ ...person, state: text })}
-            mode="outlined"
-            keyboardType="numeric"
-            style={{ marginBottom: 16 }}
-          />
-          <TextInput
             label="Zip"
-            value={person.stock}
+            value={person.zip}
             onChangeText={(text) => setPerson({ ...person, zip: text })}
             mode="outlined"
             keyboardType="numeric"
@@ -173,8 +133,16 @@ export default function PersonEditScreen(props) {
           />
           <TextInput
             label="Country"
-            value={person.stock}
+            value={person.country}
             onChangeText={(text) => setPerson({ ...person, country: text })}
+            mode="outlined"
+            keyboardType="numeric"
+            style={{ marginBottom: 16 }}
+          />
+          <TextInput
+            label="State"
+            value={person.state}
+            onChangeText={(text) => setPerson({ ...person, state: text })}
             mode="outlined"
             keyboardType="numeric"
             style={{ marginBottom: 16 }}
@@ -185,7 +153,7 @@ export default function PersonEditScreen(props) {
             mode="outlined"
             value={selectedDepartment}
             onSelect={setSelectedDepartment}
-            options={categories.map((cat) => ({
+            options={departments.map((cat) => ({
               label: cat.name,
               value: cat.id,
             }))}
@@ -205,3 +173,27 @@ export default function PersonEditScreen(props) {
     </Surface>
   );
 }
+
+
+  // async function handleSubmitTest() {
+  //   try {
+  //     if (id === -1) {
+  //       await addPerson({
+  //         name: "New Banana",
+  //         price: 3.3,
+  //         stock: 999,
+  //         description: "Fresh yellow banana",
+  //         categoryId: 1,
+  //       });
+  //     } else {
+  //       await updatePerson(id, {
+  //         ...person,
+  //         name: person.name + " Updated",
+  //       });
+  //     }
+  //     props.navigation.goBack();
+  //   } catch (err) {
+  //     console.error(err);
+  //     setError("Failed to save data.");
+  //   }
+  // }

@@ -54,8 +54,8 @@ export default function PersonViewScreen(props) {
     );
   }
 
-  function showPersonView() {
-    props.navigation.navigate("PersonView");
+  function showPeopleView() {
+    props.navigation.navigate("PeopleView");
   }
   // #endregion
 
@@ -70,13 +70,11 @@ export default function PersonViewScreen(props) {
           color: theme.colors.primary,
         }}
       >
-        {product?.name}
+        {person?.name}
       </Text>
       <View style={{ flex: 1, marginTop: 24 }}>
         {[
-          { label: "Name:", value: person.name },
           { label: "Phone:", value: person.phone },
-          { label: "DepartmentID:", value: person.departmentID },
           { label: "Street:", value: person.street },
           { label: "City:", value: person.city },
           { label: "State:", value: person.state },
@@ -116,7 +114,7 @@ export default function PersonViewScreen(props) {
         <Button
           mode="contained"
           icon="keyboard-return"
-          onPress={showpersonview}
+          onPress={showPeopleView}
           style={{
             width: "100%",
           }}
