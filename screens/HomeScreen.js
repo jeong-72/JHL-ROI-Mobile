@@ -42,7 +42,7 @@ export default function HomeScreen(props) {
           color: theme.colors.primary,
         }}
       >
-        Hi, John
+        Hi, Lim
       </Text>
       <Divider />
       <Image
@@ -61,16 +61,24 @@ export default function HomeScreen(props) {
       >
         ROI HR System
       </Text>
+      <Divider />
       <View
         style={{
           flexDirection: "row",
-          fontFamily: "Trebuchet MS",
+          justfyContent: "space-between",
+          alignItems: "center",
           paddingVertical: 20,
         }}
       >
-        Remaining Leave Days:10
+        <Text variant="titleMedium"> Remaining Leave Days:</Text>
+        <Text>10</Text>
       </View>
       <Divider />
+
+      {/* Footer Text */}
+      <View style={{ alignItems: "center", paddingVertical: 10 }}>
+        <Text variant="titleMedium">Developed by Jeong Hyun Lim</Text>
+      </View>
     </Surface>
   );
 }
