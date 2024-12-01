@@ -35,92 +35,109 @@ export default function HelpScreen(props) {
 <Switch value={isSwitchOn} onValueChange={() => setIsSwitchOn(!isSwitchOn)} />;
   return (
     <Surface style={{ flex: 1, padding: 16 }} mode="flat" elevation={1}>
-      <Text
-        variant="headlineLarge"
-        style={{
-          marginBottom: 24,
-          fontWeight: "bold",
-          color: theme.colors.primary,
-          fontFamily: "Trebuchet MS",
-        }}
-      >
-        Help Screen
-      </Text>
-      <View style={{ flexDirection: "row" }}>
+      <ScrollView style={{ flex: 1 }}>
         <Text
+          variant="headlineLarge"
           style={{
+            marginBottom: 24,
+            fontWeight: "bold",
+            color: theme.colors.primary,
             fontFamily: "Trebuchet MS",
-            fontSize: isSwitchOn ? 16 : 14,
-            marginRight: 10,
-
           }}
         >
-          Font Size
+          Help Screen
         </Text>
-        <Switch
-          value={isSwitchOn}
-          onValueChange={() => setIsSwitchOn(!isSwitchOn)}
-        />
-      </View>
-      <View>
-        <Text
-          variant="headlineSmall"
-          style={{ paddingTop: 40, paddingVertical: 10, fontFamily: "Trebuchet MS" }}
-        >
-          1. Staff Directory
-        </Text>
-        <Text
-          style={{ fontFamily: "Trebuchet MS", fontSize: isSwitchOn ? 16 : 14 }}
-        >
-          The Staff Directory feature allows you to browse a list of all
-          employees in the organisation. You can search for specific staff
-          members and view their detailed information, including their roles,
-          contact details, and departments.
-        </Text>
-      </View>
-      <View>
-        <Text
-          variant="headlineSmall"
-          style={{ paddingVertical: 10, fontFamily: "Trebuchet MS" }}
-        >
-          2. Add New Staff
-        </Text>
-        <Text
-          style={{ fontFamily: "Trebuchet MS", fontSize: isSwitchOn ? 16 : 14 }}
-        >
-          This feature enables you to add a new staff member to the directory.
-          To do so, tap on the '+' icon or the 'Add Staff' button, fill in the
-          required details such as name, position, department, and contact
-          information and save the entry.
-        </Text>
-      </View>
-      <View>
-        <Text
-          variant="headlineSmall"
-          style={{ paddingVertical: 10, fontFamily: "Trebuchet MS" }}
-        >
-          3.Update Staff Information
-        </Text>
-        <Text
-          style={{ fontFamily: "Trebuchet MS", fontSize: isSwitchOn ? 16 : 14 }}
-        >
-          You can update an existing staff member's information by navigating to
-          their profile and selecting the 'Edit' option. Make the necessary
-          changes and ensure to save them to keep the directory current.
-        </Text>
-      </View>
-      <View>
-        <Text variant="headlineSmall" style={{ paddingVertical: 10 }}>
-          4. Delete Staff Entry
-        </Text>
-        <Text
-          style={{ fontFamily: "Trebuchet MS", fontSize: isSwitchOn ? 16 : 14 }}
-        >
-          To remove a staff member from the directory, go to their profile, tap
-          the 'Delete' button and confirm the action. This will permanently
-          remove the staff member from the directory
-        </Text>
-      </View>
+        <View style={{ flexDirection: "row" }}>
+          <Text
+            style={{
+              fontFamily: "Trebuchet MS",
+              fontSize: isSwitchOn ? 16 : 14,
+              marginRight: 10,
+            }}
+          >
+            Font Size
+          </Text>
+          <Switch
+            value={isSwitchOn}
+            onValueChange={() => setIsSwitchOn(!isSwitchOn)}
+          />
+        </View>
+        <View>
+          <Text
+            variant="headlineSmall"
+            style={{
+              paddingTop: 40,
+              paddingVertical: 10,
+              fontFamily: "Trebuchet MS",
+            }}
+          >
+            1. Staff Directory
+          </Text>
+          <Text
+            style={{
+              fontFamily: "Trebuchet MS",
+              fontSize: isSwitchOn ? 16 : 14,
+            }}
+          >
+            The Staff Directory feature allows you to browse a list of all
+            employees in the organisation. You can search for specific staff
+            members and view their detailed information, including their roles,
+            contact details, and departments.
+          </Text>
+        </View>
+        <View>
+          <Text
+            variant="headlineSmall"
+            style={{ paddingVertical: 10, fontFamily: "Trebuchet MS" }}
+          >
+            2. Add New Staff
+          </Text>
+          <Text
+            style={{
+              fontFamily: "Trebuchet MS",
+              fontSize: isSwitchOn ? 16 : 14,
+            }}
+          >
+            This feature enables you to add a new staff member to the directory.
+            To do so, tap on the '+' icon or the 'Add Staff' button, fill in the
+            required details such as name, position, department, and contact
+            information and save the entry.
+          </Text>
+        </View>
+        <View>
+          <Text
+            variant="headlineSmall"
+            style={{ paddingVertical: 10, fontFamily: "Trebuchet MS" }}
+          >
+            3.Update Staff Information
+          </Text>
+          <Text
+            style={{
+              fontFamily: "Trebuchet MS",
+              fontSize: isSwitchOn ? 16 : 14,
+            }}
+          >
+            You can update an existing staff member's information by navigating
+            to their profile and selecting the 'Edit' option. Make the necessary
+            changes and ensure to save them to keep the directory current.
+          </Text>
+        </View>
+        <View>
+          <Text variant="headlineSmall" style={{ paddingVertical: 10 }}>
+            4. Delete Staff Entry
+          </Text>
+          <Text
+            style={{
+              fontFamily: "Trebuchet MS",
+              fontSize: isSwitchOn ? 16 : 14,
+            }}
+          >
+            To remove a staff member from the directory, go to their profile,
+            tap the 'Delete' button and confirm the action. This will
+            permanently remove the staff member from the directory.
+          </Text>
+        </View>
+      </ScrollView>
     </Surface>
   );
 }
