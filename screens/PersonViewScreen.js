@@ -61,18 +61,18 @@ export default function PersonViewScreen(props) {
 
   return (
     <Surface style={{ flex: 1, padding: 16 }}>
-      <Text
-        variant="headlineLarge"
-        style={{
-          marginHorizontal: 10,
-          marginBottom: 24,
-          fontWeight: "bold",
-          color: theme.colors.primary,
-        }}
-      >
-        {person?.name}
-      </Text>
       <ScrollView style={{ flex: 1 }}>
+        <Text
+          variant="headlineLarge"
+          style={{
+            marginHorizontal: 10,
+            marginBottom: 24,
+            fontWeight: "bold",
+            color: theme.colors.primary,
+          }}
+        >
+          {person?.name}
+        </Text>
         <View style={{ flex: 1, marginTop: 24 }}>
           {[
             { label: "Phone:", value: person.phone },

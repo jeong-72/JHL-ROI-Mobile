@@ -65,7 +65,7 @@ export default function HomeScreen(props) {
       <View
         style={{
           flexDirection: "row",
-          justfyContent: "space-between",
+          justifyContent: "space-between",
           alignItems: "center",
           paddingVertical: 20,
         }}
@@ -76,7 +76,7 @@ export default function HomeScreen(props) {
       <Divider />
 
       {/* Footer Text */}
-      <View style={{ alignItems: "center", paddingVertical: 10 }}>
+      <View style={{ alignItems: "center", paddingVertical: 30 }}>
         <Text variant="titleMedium">Developed by Jeong Hyun Lim</Text>
       </View>
     </Surface>

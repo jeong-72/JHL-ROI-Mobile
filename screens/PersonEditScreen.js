@@ -174,26 +174,3 @@ export default function PersonEditScreen(props) {
   );
 }
 
-
-  // async function handleSubmitTest() {
-  //   try {
-  //     if (id === -1) {
-  //       await addPerson({
-  //         name: "New Banana",
-  //         price: 3.3,
-  //         stock: 999,
-  //         description: "Fresh yellow banana",
-  //         categoryId: 1,
-  //       });
-  //     } else {
-  //       await updatePerson(id, {
-  //         ...person,
-  //         name: person.name + " Updated",
-  //       });
-  //     }
-  //     props.navigation.goBack();
-  //   } catch (err) {
-  //     console.error(err);
-  //     setError("Failed to save data.");
-  //   }
-  // }
