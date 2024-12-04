@@ -109,7 +109,7 @@ export default function HelpScreen(props) {
             variant="headlineSmall"
             style={{ paddingVertical: 10, fontFamily: "Trebuchet MS" }}
           >
-            3.Update Staff Information
+            3. Update Staff Information
           </Text>
           <Text
             style={{

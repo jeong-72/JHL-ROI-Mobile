@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   Avatar,
   Card,
   IconButton,
-  FAB, Snackbar,
+  FAB,
+  Snackbar,
   TextInput,
   Dialog,
   Portal,
@@ -12,9 +13,16 @@ import {
   Surface,
   Divider,
   Searchbar,
-  useTheme
+  useTheme,
 } from "react-native-paper";
-import {View, Image, TouchableOpacity, StyleSheet, ScrollView, ActivityIndicator} from "react-native";
+import {
+  View,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  ScrollView,
+  ActivityIndicator,
+} from "react-native";
 // import { TouchableOpacity } from "react-native-gesture-handler";
 import { useIsFocused } from "@react-navigation/native";
 import { Dropdown } from "react-native-paper-dropdown";
@@ -75,10 +83,6 @@ export default function HomeScreen(props) {
       </View>
       <Divider />
 
-      {/* Footer Text */}
-      <View style={{ alignItems: "center", paddingVertical: 30 }}>
-        <Text variant="titleMedium">Developed by Jeong Hyun Lim</Text>
-      </View>
     </Surface>
   );
 }
